@@ -35,8 +35,7 @@ def download_image(img_url, path):
 
 
 def get_html(content_url, dir_name, path, count):
-    print(content_url)
-    print(dir_name)
+    print("开始下载", content_url, dir_name)
     path_ = path + dir_name
     if os.path.exists(path_):
         pass
@@ -79,7 +78,7 @@ def index_page(start_url, path):
 
 
 def item(index_url, item_name):
-    path = "F:\image\\" + item_name
+    path = "F:\\image\\" + item_name
     if os.path.exists(path):
         pass
     else:
