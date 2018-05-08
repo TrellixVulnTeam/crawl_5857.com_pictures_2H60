@@ -91,12 +91,11 @@ def item(index_url, item_name):
     for index in range(2, index_num + 1):
         index_urls.append(index_url + "index_" + str(index) + ".html")
     index_urls.insert(0, index_url)  # 获取所有页面的url
-    count = 0
     for index in index_urls:
         index_page(index, path + "\\")
 
 
-if __name__ == '__main__':
+def main():
     url = "http://www.5857.com/"
     html = urllib.request.urlopen(url).read().decode("utf-8")
     et = etree.HTML(html)
@@ -108,4 +107,8 @@ if __name__ == '__main__':
     for i in range(6, len(items)):
         th[i] = threading.Thread(target=item, args=(item_url[i], items[i]))  # 创建多个线程
         th[i].start()  # 多个线程同时启动
+
+
+if __name__ == '__main__':
+    main()
 
